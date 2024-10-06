@@ -3,7 +3,7 @@ import { test, expect, chromium } from '@playwright/test';
 
 test ('standard user login', async () => {
 
-    const browser = await chromium.launch( {headless: false} );
+    const browser = await chromium.launch( {headless: true} );
     const context = await browser.newContext();
 
     // Open new page
@@ -37,7 +37,7 @@ test ('standard user login', async () => {
 
 test ('locked user login', async () => {
 
-    const browser = await chromium.launch( {headless: false} );
+    const browser = await chromium.launch( {headless: true} );
     const context = await browser.newContext();
 
     // Open new page
@@ -69,7 +69,7 @@ test ('locked user login', async () => {
 
 test ('problem user login', async () => {
 
-    const browser = await chromium.launch( {headless: false} );
+    const browser = await chromium.launch( {headless: true} );
     const context = await browser.newContext();
 
     // Open new page
@@ -105,7 +105,7 @@ test ('problem user login', async () => {
 
 test ('performance glitch user login', async () => {
 
-    const browser = await chromium.launch( {headless: false} );
+    const browser = await chromium.launch( {headless: true} );
     const context = await browser.newContext();
 
     // Open new page
@@ -139,7 +139,7 @@ test ('performance glitch user login', async () => {
 
 test ('error user login', async ({ request }) => {
 
-    const browser = await chromium.launch( {headless: false} );
+    const browser = await chromium.launch( {headless: true} );
     const context = await browser.newContext();
 
     // Open new page

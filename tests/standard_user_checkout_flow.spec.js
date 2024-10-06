@@ -12,7 +12,7 @@ test ('Checkout flow for standard user', async () => {
     const postalCode = `${Array.from({length: 3}, () => String.fromCharCode(Math.floor(Math.random() * 26) + 65)).join('')}-${('00000' + Math.floor(Math.random() * 100000)).slice(-5)}`;
     
 
-    const browser = await chromium.launch( {headless: false} );
+    const browser = await chromium.launch( {headless: true} );
     const context = await browser.newContext();
 
     // Open new page
