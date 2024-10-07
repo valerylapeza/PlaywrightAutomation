@@ -35,7 +35,7 @@ test ('standard user login', async () => {
     await browser.close();
 })
 
-test ('locked user login', async () => {
+test ('locked user login', async ({ request }) => {
 
     const browser = await chromium.launch( {headless: true} );
     const context = await browser.newContext();
@@ -61,6 +61,10 @@ test ('locked user login', async () => {
     await expect(userName).toHaveClass('input_error form_input error');
     await expect(password).toHaveClass('input_error form_input error');
     await expect(errorMessage).toContainText(/Epic sadface/);
+
+    // Validate the 503 status code (Service Unavailable)
+    const response = await request.post("https://submit.backtrace.io/UNIVERSE/TOKEN/json");
+    expect(response.status()).toBe(503);
 
     // Close browser window
     await context.close();
