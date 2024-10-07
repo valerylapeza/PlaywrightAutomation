@@ -21,7 +21,7 @@ test ('standard user login', async () => {
 
     // Verify that standard user is logged in
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
-
+   
     // Open the hamburger menu
     await page.getByRole('button', { name: 'Open Menu' }).click();
     await expect(page.getByRole('button', { name: 'Open Menu' })).toBeVisible();

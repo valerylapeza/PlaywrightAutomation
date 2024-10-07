@@ -5,3 +5,5 @@ node_modules/
 /playwright/.cache/
 e2e/
 tests-examples/
+tests/visual_user_verification.spec.js-snapshots
+visual_user_verification.spec.js
