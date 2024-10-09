@@ -33,10 +33,8 @@ test ('reset app state', async () => {
     await page.click('[data-test="reset-sidebar-link"]');
 
     //Verify that state of buttons are not changed
-    const backpackRemove = page.locator('[data-test="remove-sauce-labs-backpack]');
-    const tshirtRemove = page.locator('[data-test="remove-sauce-labs-bolt-t-shirt]');
-    await page.locator(backpackRemove);
-    await page.locator(tshirtRemove);
+    await page.locator('[data-test="remove-sauce-labs-backpack]');
+    await page.locator('[data-test="remove-sauce-labs-bolt-t-shirt]');
 
     //Log out from the system
     await page.locator('[data-test="logout-sidebar-link"]').click();
