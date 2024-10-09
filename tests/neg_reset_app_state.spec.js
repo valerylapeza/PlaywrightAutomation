@@ -20,6 +20,7 @@ test ('reset app state', async () => {
 
     // Verify that standard user is logged in
     await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html');
+    await page.locator('[data-test="inventory-container"]');
 
     //Add 2 items to the cart
     await page.click('[data-test="add-to-cart-sauce-labs-backpack"]');
